@@ -1,0 +1,213 @@
+:root {
+  --font-size: 16px;
+  --background: #ffffff;
+  --foreground: #1b2124;
+  --card: #ffffff;
+  --card-foreground: #1b2124;
+  --popover: #ffffff;
+  --popover-foreground: #1b2124;
+  --primary: #030213;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #030213;
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #97a6b4;
+  --radius: 0.625rem;
+
+  /* UHC Brand Colors */
+  --color-uhc-blue: #002677;
+  --color-uhc-blue-mid: #003DA5;
+  --color-uhc-blue-light: #0066F5;
+  --color-uhc-blue-50: #E6EBF4;
+  --color-uhc-blue-100: #CCd7E9;
+
+  /* Accent */
+  --color-teal: #00BED5;
+  --color-teal-light: #E0F7FA;
+
+  /* Status */
+  --color-success: #2E8540;
+  --color-success-light: #E8F5E9;
+  --color-error: #D4183D;
+  --color-error-light: #FDEDF0;
+  --color-warning: #FF612B;
+  --color-warning-light: #FFF3E0;
+  --color-info: #0066F5;
+  --color-info-light: #E3F2FD;
+
+  /* BrightVista Design Tokens */
+  --color-border-default: #e5e5e5;
+  --color-text-primary: #1b2124;
+  --color-text-secondary: #4d595e;
+  --color-text-muted: #97a6b4;
+  --color-surface-bg: #f7fafc;
+  --color-surface-hover: #f0f2f4;
+  --color-icon-default: #565656;
+  --color-icon-active-bg: #e4e8eb;
+  --color-card-bg: #ffffff;
+  --color-scrollbar-thumb: #d0d8de;
+  --color-scrollbar-thumb-hover: #a0aeb8;
+
+  /* Layout */
+  --header-height: 56px;
+  --sidebar-width: 240px;
+  --sidebar-collapsed-width: 64px;
+}
+
+@theme inline {
+  --font-sans: 'Ubuntu Sans', 'Ubuntu', ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* UHC Brand */
+  --color-uhc-blue: var(--color-uhc-blue);
+  --color-uhc-blue-mid: var(--color-uhc-blue-mid);
+  --color-uhc-blue-light: var(--color-uhc-blue-light);
+  --color-uhc-blue-50: var(--color-uhc-blue-50);
+  --color-uhc-blue-100: var(--color-uhc-blue-100);
+
+  /* Accent */
+  --color-teal: var(--color-teal);
+  --color-teal-light: var(--color-teal-light);
+
+  /* Status */
+  --color-success: var(--color-success);
+  --color-success-light: var(--color-success-light);
+  --color-error: var(--color-error);
+  --color-error-light: var(--color-error-light);
+  --color-warning: var(--color-warning);
+  --color-warning-light: var(--color-warning-light);
+  --color-info: var(--color-info);
+  --color-info-light: var(--color-info-light);
+
+  /* BrightVista Design Tokens */
+  --color-surface: var(--color-surface-bg);
+  --color-surface-hover: var(--color-surface-hover);
+  --color-border-dark: var(--color-border-default);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+  --color-card-bg: var(--color-card-bg);
+  --color-brand: var(--color-uhc-blue);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Ubuntu Sans', 'Ubuntu', sans-serif;
+  }
+
+  /* Custom scrollbar styling — matches BrightVista */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-scrollbar-thumb) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--color-scrollbar-thumb);
+    border-radius: 9999px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-scrollbar-thumb-hover);
+  }
+
+  *::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  /* Default typography — matches BrightVista base layer */
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}
